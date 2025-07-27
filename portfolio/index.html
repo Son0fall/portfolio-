@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Njabulo B. Mavuso - IT Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@gh-pages/qrcode.min.js"></script>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --light: #eff6ff;
+            --dark: #1e293b;
+            --accent: #f59e0b;
+            --white: #ffffff;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid var(--accent);
+            object-fit: cover;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.8)), url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 60px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+        
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .profile-img-large {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid var(--secondary);
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            }
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-item i {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        /* Experience Section */
+        .experience {
+            background-color: var(--light);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--white);
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--white);
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            top: 25px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -12px;
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .timeline-content .date {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-content ul {
+            padding-left: 20px;
+        }
+        
+        .timeline-content ul li {
+            margin-bottom: 8px;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-10px);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .skill-item {
+            margin-bottom: 20px;
+        }
+        
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: var(--light);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 5px;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        /* Projects Section */
+        .projects {
+            background-color: var(--light);
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .project-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .project-tag {
+            background-color: var(--light);
+            color: var(--secondary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        /* References Section */
+        .references-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .reference-card {
+            text-align: center;
+            max-width: 250px;
+        }
+        
+        .reference-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 5px solid var(--light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .reference-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .reference-img:hover {
+            transform: scale(1.1);
+            border-color: var(--secondary);
+        }
+        
+        .reference-info {
+            display: none;
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        
+        .reference-info.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            cursor: pointer;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .chat-container {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 350px;
+            height: 450px;
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-container.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .chat-header h3 {
+            font-size: 1.2rem;
+        }
+        
+        .close-chat {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 12px 15px;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        
+        .message.bot {
+            align-self: flex-start;
+            background-color: var(--light);
+            border-bottom-left-radius: 5px;
+        }
+        
+        .message.user {
+            align-self: flex-end;
+            background-color: var(--secondary);
+            color: var(--white);
+            border-bottom-right-radius: 5px;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            background-color: var(--white);
+            border-top: 1px solid #eee;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .chat-input button {
+            margin-left: 10px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            color: var(--white);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: var(--white);
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: modalFade 0.3s ease;
+        }
+        
+        @keyframes modalFade {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: #777;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--primary);
+        }
+        
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .modal-header h2 {
+            color: var(--primary);
+        }
+        
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-option {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .contact-option:hover {
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+        
+        .contact-option:hover .contact-icon-modal {
+            background-color: var(--white);
+            color: var(--secondary);
+        }
+        
+        .contact-icon-modal {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .contact-text p {
+            color: #666;
+        }
+        
+        .contact-option:hover .contact-text p {
+            color: var(--white);
+        }
+        
+        /* Map Modal */
+        .map-modal-content {
+            width: 90%;
+            max-width: 800px;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Personal Attributes */
+        .attributes {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .attributes li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .attributes i {
+            color: var(--success);
+            margin-right: 10px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .profile-img-large {
+                width: 250px;
+                height: 250px;
+            }
+        }
+        /* Added spinner for loading indicator */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Fixed language selector positioning */
+        .language-selector {
+            position: absolute;
+            top: -50px;  /* Positioned above the chat button */
+            right: 0;
+            z-index: 1001;
+        }
+        
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .lang-dropdown {
+            position: absolute;
+            bottom: 40px;  /* Positioned above the button */
+            right: 0;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: none;
+            flex-direction: column;
+            width: 180px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1002;
+        }
+        
+        .lang-dropdown.active {
+            display: flex;
+        }
+        
+        /* Enhanced chat container */
+        .chat-container {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 350px;
+            height: 450px;
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        /* Loading spinner */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(59, 130, 246, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--secondary);
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .language-selector {
+                top: -45px;
+                right: 10px;
+            }
+            
+            .chat-container {
+                width: 300px;
+                height: 400px;
+                right: 10px;
+            }
+            
+            .lang-dropdown {
+                width: 160px;
+            }
+        }
+        .qr-generator {
+        background-color: var(--light);
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 40px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .qr-input {
+        display: flex;
+        gap: 10px;
+        margin: 20px 0;
+        justify-content: center;
+    }
+    
+    .qr-input input {
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 300px;
+        max-width: 100%;
+    }
+    
+    #qrcode {
+        margin: 20px auto;
+        display: inline-block;
+        padding: 15px;
+        background: white;
+        border-radius: 10px;
+    }
+    
+    #download-qr {
+        display: inline-block;
+        background: var(--secondary);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 15px;
+        transition: background 0.3s;
+    }
+    
+    #download-qr:hover {
+        background: var(--primary);
+    }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/DSC_9362~2.JPG" alt="Njabulo Mavuso" class="profile-img">
+                <span>Son of All</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#references">References</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Njabulo B. Mavuso</h1>
+                <h2>IT Support | Systems & Server Administration | DevOps Enthusiast</h2>
+                <p id="typewriter-text">Seeking opportunities to apply technical expertise, problem-solving skills, and passion for IT in a dynamic team environment.</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+                <a href="#projects" class="btn btn-outline">View My Work</a>
+                <button class="btn" id="hireMeBtn">Hire Me</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="images/DSC_9362~2.JPG" alt="Njabulo Mavuso" class="profile-img-large">
+                </div>
+                <div class="about-text">
+                    <h3>IT Professional & Developer</h3>
+                    <p>I am an IT professional with experience in IT support, web development, and systems administration. I have a passion for cloud computing, server management, and automation. I am committed to excellence and constantly strive to go above and beyond in my work.</p>
+                    <p>I completed my Form 5 at Ebenezer FEA High School in 2021 and earned an Associate Degree in Information Technology from Limkokwing University with a GPA of 3.46.</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Education</h4>
+                                <p>Associate Degree in IT</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Makhokholo, Mbabane</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>njabulomavuso0271@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>(+268) 78361103 / 79792770</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Work Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">February 2019 - May 2021</span>
+                        <h3>IT Support and Technician</h3>
+                        <h4>Future Focus Electronics, Inc.</h4>
+                        <ul>
+                            <li>Developed a friendly environment with clients during my task</li>
+                            <li>Collaborated with cross-functional teams to optimize work performance and please customers</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">December 2022 - March 2025</span>
+                        <h3>Full-stack Web Developer</h3>
+                        <h4>Limkokwing University Mbabane Campus</h4>
+                        <ul>
+                            <li>Built and maintained scalable and secure web applications</li>
+                            <li>Developed and maintained responsive, user-friendly websites using modern frameworks</li>
+                            <li>Designed and implemented custom CMS solutions to meet clients' requirements</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">Current</span>
+                        <h3>IT Support and Technician</h3>
+                        <h4>Ministry of Economic Planning & Development</h4>
+                        <ul>
+                            <li>Collaborate with cross-functional teams to optimize work performance</li>
+                            <li>Learn how government ministries operate to deliver services to the public</li>
+                            <li>Implement time management strategies to ensure timely delivery of tasks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills & Abilities</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Programming Languages</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Web Development</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Database Management</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Problem Solving</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Communication</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Team Collaboration</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Personal Attributes</h3>
+                    <ul class="attributes">
+                        <li><i class="fas fa-check-circle"></i> Deeply committed to achieving excellence</li>
+                        <li><i class="fas fa-check-circle"></i> Consistently go above and beyond in tasks</li>
+                        <li><i class="fas fa-check-circle"></i> Self-driven and strive for excellence</li>
+                        <li><i class="fas fa-check-circle"></i> Excellent time management</li>
+                        <li><i class="fas fa-check-circle"></i> Ability to work under pressure</li>
+                        <li><i class="fas fa-check-circle"></i> Strong computer literacy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Projects</h2>
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 1">
+                    </div>
+                    <div class="project-content">
+                        <h3>Online Hotel Booking & Management</h3>
+                        <p>A full-featured online booking platform with payment integration and  management.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML/CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Node.js</span>
+                        </div>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Project 2">
+                    </div>
+                    <div class="project-content">
+                        <h3>University Portal</h3>
+                        <p>Student management system for Limkokwing University with course registration and grading.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">Bootstrap</span>
+                        </div>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 3">
+                    </div>
+                    <div class="project-content">
+                        <h3>Ministry's Visitor Management System</h3>
+                        <p>Dashboard for Ministry of Economic Planning to track service delivery metrics.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Express</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section id="references" class="references">
+        <div class="container">
+            <div class="section-title">
+                <h2>References</h2>
+            </div>
+            <div class="references-container">
+                <div class="reference-card">
+                    <div class="reference-img" onclick="showReference('reference1')">
+                        <img src="images/MrTNgozo.jpeg" alt="Mr. T. Ngozo">
+                    </div>
+                    <h3>Mr. T. Ngozo</h3>
+                    <p>Senior Programmer</p>
+                    <div class="reference-info" id="reference1">
+                        <p><strong>Position:</strong> Senior Programmer</p>
+                        <p><strong>Organization:</strong> Limkokwing University</p>
+                        <p><strong>Campus:</strong> Mbabane Campus</p>
+                        <p><strong>Phone:</strong> 268 79866017</p>
+                    </div>
+                </div>
+                
+                <div class="reference-card">
+                    <div class="reference-img" onclick="showReference('reference2')">
+                        <img src="images/not-found.jpg" alt="Mr. T. Simelane">
+                    </div>
+                    <h3>Mr. T. Simelane</h3>
+                    <p>Computer Systems Engineer</p>
+                    <div class="reference-info" id="reference2">
+                        <p><strong>Position:</strong> Head of Academics</p>
+                        <p><strong>Organization:</strong> Limkokwing University</p>
+                        <p><strong>Campus:</strong> Mbabane Campus</p>
+                        <p><strong>Phone:</strong> 268 76235694</p>
+                    </div>
+                </div>
+                
+                <div class="reference-card">
+                    <div class="reference-img" onclick="showReference('reference3')">
+                        <img src="images/Mr.-Siboniso-Masilela.png" alt="Mr. S.D. Masilela">
+                    </div>
+                    <h3>Mr. S.D. Masilela</h3>
+                    <p>Under Secretary</p>
+                    <div class="reference-info" id="reference3">
+                        <p><strong>Position:</strong> Under Secretary</p>
+                        <p><strong>Organization:</strong> Ministry of Economic Planning & Development</p>
+                        <p><strong>Phone:</strong> 268 7606 3513</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item" id="locationItem">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Makhokholo, Mbabane, Eswatini</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:njabulomavuso0271@gmail.com" style="color: inherit; text-decoration: none;">njabulomavuso0271@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p><a href="tel:+26879792770" style="color: inherit; text-decoration: none;">(+268) 78361103 / 79792770</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p>www.linkedin.com/in/njabulo-mavuso</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formsubmit.co/njabulomavuso0271@gmail.com" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<div class="qr-generator">
+    <h3>Share My Portfolio</h3>
+    <div class="qr-input">
+        <input type="text" id="qr-url" placeholder="Enter URL" value="https://your-portfolio-url.com">
+        <button id="generate-qr">Generate QR</button>
+    </div>
+    <div id="qrcode"></div>
+    <a id="download-qr" download="portfolio-qr.png">Download QR Code</a>
+</div>
+
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-button" id="openChat">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="language-selector" id="languageSelector">
+            <button class="lang-btn" id="langBtn">
+                <i class="fas fa-globe"></i> English
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <div class="lang-option" data-lang="en" data-name="English">
+                    <img src="https://flagcdn.com/w20/gb.png" class="lang-flag"> English
+                </div>
+                <div class="lang-option" data-lang="es" data-name="Spanish">
+                    <img src="https://flagcdn.com/w20/es.png" class="lang-flag"> Spanish
+                </div>
+                <div class="lang-option" data-lang="fr" data-name="French">
+                    <img src="https://flagcdn.com/w20/fr.png" class="lang-flag"> French
+                </div>
+                <div class="lang-option" data-lang="de" data-name="German">
+                    <img src="https://flagcdn.com/w20/de.png" class="lang-flag"> German
+                </div>
+                <div class="lang-option" data-lang="zh-CN" data-name="Chinese">
+                    <img src="https://flagcdn.com/w20/cn.png" class="lang-flag"> Chinese
+                </div>
+                <div class="lang-option" data-lang="ja" data-name="Japanese">
+                    <img src="https://flagcdn.com/w20/jp.png" class="lang-flag"> Japanese
+                </div>
+                <div class="lang-option" data-lang="ru" data-name="Russian">
+                    <img src="https://flagcdn.com/w20/ru.png" class="lang-flag"> Russian
+                </div>
+                <div class="lang-option" data-lang="pt" data-name="Portuguese">
+                    <img src="https://flagcdn.com/w20/pt.png" class="lang-flag"> Portuguese
+                </div>
+                <div class="lang-option" data-lang="ar" data-name="Arabic">
+                    <img src="https://flagcdn.com/w20/sa.png" class="lang-flag"> Arabic
+                </div>
+                <div class="lang-option" data-lang="sw" data-name="Swahili">
+                    <img src="https://flagcdn.com/w20/tz.png" class="lang-flag"> Swahili
+                </div>
+            </div>
+        </div>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h3>Chat with Njabulo's Assistant</h3>
+                <button class="close-chat" id="closeChat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    Hello! I'm an AI assistant for Njabulo Mavuso. How can I help you today?
+                </div>
+                <div class="message bot">
+                    You can ask me about Njabulo's skills, experience, projects, or how to contact him.
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Njabulo B. Mavuso</span>
+                    </div>
+                    <p>IT Support | Systems & Server Administration | DevOps Enthusiast</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/njebz-ncele-95b677256/?originalSubdomain=sz" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Son0fall" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/njabulonjebzah.mavuso" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/njabulonjebzah.mavuso" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#" target="_blank">My Resume</a></li>
+                        <li><a href="#" target="_blank">Certifications</a></li>
+                        <li><a href="#" target="_blank">Blog</a></li>
+                        <li><a href="https://github.com/Son0fall" target="_blank">GitHub Profile</a></li>
+                        <li><a href="https://www.linkedin.com/in/njebz-ncele-95b677256/?originalSubdomain=sz" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Makhokholo, Mbabane</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+26878361103" style="color: #ccc; text-decoration: none;">(+268) 78361103</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:njabulomavuso0271@gmail.com" style="color: #ccc; text-decoration: none;">njabulomavuso0271@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Njabulo B. Mavuso. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hire Me Modal -->
+    <div class="modal" id="hireMeModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeHireModal">&times;</span>
+            <div class="modal-header">
+                <h2>Hire Me</h2>
+                <p>Choose a method to contact me</p>
+            </div>
+            <div class="contact-options">
+                <div class="contact-option" onclick="window.location.href='tel:+26879792770';">
+                    <div class="contact-icon-modal">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Phone Call</h3>
+                        <p>Call me directly to discuss opportunities</p>
+                    </div>
+                </div>
+                <div class="contact-option" onclick="window.location.href='mailto:njabulomavuso0271@gmail.com';">
+                    <div class="contact-icon-modal">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Email</h3>
+                        <p>Send me an email with your proposal</p>
+                    </div>
+                </div>
+                <div class="contact-option" onclick="window.open('https://wa.me/26879792770', '_blank');">
+                    <div class="contact-icon-modal">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>WhatsApp</h3>
+                        <p>Message me on WhatsApp for quick communication</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Location Map Modal -->
+    <div class="modal" id="locationModal">
+        <div class="modal-content map-modal-content">
+            <span class="close-modal" id="closeLocationModal">&times;</span>
+            <div class="modal-header">
+                <h2>My Location</h2>
+                <p>Makhokholo, Mbabane, Eswatini</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115692.85959847987!2d31.043510546875!3d-26.305500000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee8d0b5f7c5b0d3%3A0x1f5d4c4d4d4d4d4d!2sMbabane%2C%20Eswatini!5e0!3m2!1sen!2sus!4v1719233180347!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Chat Widget
+        const openChatBtn = document.getElementById('openChat');
+        const closeChatBtn = document.getElementById('closeChat');
+        const chatContainer = document.getElementById('chatContainer');
+        
+        openChatBtn.addEventListener('click', () => {
+            chatContainer.classList.add('active');
+        });
+        
+        closeChatBtn.addEventListener('click', () => {
+            chatContainer.classList.remove('active');
+        });
+        
+        // Language selector functionality
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        let currentLang = 'en';
+        let currentLangName = 'English';
+        
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.lang-option').forEach(option => {
+            option.addEventListener('click', () => {
+                currentLang = option.getAttribute('data-lang');
+                currentLangName = option.getAttribute('data-name');
+                langBtn.innerHTML = `<i class="fas fa-globe"></i> ${currentLangName}`;
+                langDropdown.classList.remove('active');
+                
+                // Send language change notification to chat
+                const chatMessages = document.getElementById('chatMessages');
+                if (chatMessages) {
+                    const langMessage = document.createElement('div');
+                    langMessage.classList.add('message', 'bot');
+                    langMessage.textContent = `Language changed to ${currentLangName}. How can I help you?`;
+                    chatMessages.appendChild(langMessage);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+            });
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                langDropdown.classList.remove('active');
+            }
+        });
+        
+        // Show Reference Details
+        function showReference(id) {
+            // Hide all reference info
+            document.querySelectorAll('.reference-info').forEach(info => {
+                info.classList.remove('active');
+            });
+            
+            // Show selected reference info
+            const referenceInfo = document.getElementById(id);
+            if (referenceInfo) {
+                referenceInfo.classList.add('active');
+            }
+        }
+        
+        // Enhanced Chat Functionality with Translation
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const sendMessageBtn = document.getElementById('sendMessage');
+        
+        if (sendMessageBtn && chatInput) {
+            sendMessageBtn.addEventListener('click', sendMessage);
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        }
+        
+        // Function to send message to backend
+        function sendMessage() {
+            if (!chatInput || !chatMessages) return;
+            
+            const message = chatInput.value.trim();
+            if (message) {
+                // Add user message
+                const userMessage = document.createElement('div');
+                userMessage.classList.add('message', 'user');
+                userMessage.textContent = message;
+                chatMessages.appendChild(userMessage);
+                
+                // Add loading indicator
+                const loadingMessage = document.createElement('div');
+                loadingMessage.classList.add('message', 'bot');
+                loadingMessage.innerHTML = `Processing your message... <span class="spinner"></span>`;
+                chatMessages.appendChild(loadingMessage);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                // Clear input
+                chatInput.value = '';
+                
+                // Send to backend with enhanced error handling
+                fetch('http://localhost:5000/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        lang: currentLang
+                    })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Remove loading indicator
+                    if (loadingMessage.parentNode === chatMessages) {
+                        chatMessages.removeChild(loadingMessage);
+                    }
+                    
+                    // Add bot response
+                    const botMessage = document.createElement('div');
+                    botMessage.classList.add('message', 'bot');
+                    
+                    // Show translated response
+                    botMessage.textContent = data.translated || data.error || "I couldn't process your request";
+                    
+                    chatMessages.appendChild(botMessage);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                })
+                .catch(error => {
+                    console.error('Fetch Error:', error);
+                    // Remove loading indicator
+                    if (loadingMessage.parentNode === chatMessages) {
+                        chatMessages.removeChild(loadingMessage);
+                    }
+                    
+                    // Show error message
+                    const errorMessage = document.createElement('div');
+                    errorMessage.classList.add('message', 'bot');
+                    errorMessage.textContent = "Sorry, I'm having trouble connecting. Please try again later.";
+                    chatMessages.appendChild(errorMessage);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                    
+                    // Show troubleshooting tips
+                    const tipMessage = document.createElement('div');
+                    tipMessage.classList.add('message', 'bot');
+                    tipMessage.innerHTML = "Troubleshooting: <br>1. Ensure backend server is running<br>2. Check your internet connection";
+                    chatMessages.appendChild(tipMessage);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                });
+            }
+        }
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+emailjs.init("iWZM2ROTmvKaR2F7A");
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm('service_qg0cf7r', 'template_i0te3kj', this)
+    .then(() => {
+      alert("Message sent successfully!");
+      this.reset();
+    }, (error) => {
+      alert("Oops! Something went wrong: " + error.text);
+    });
+});
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (header) {
+                header.classList.toggle('sticky', window.scrollY > 0);
+            }
+        });
+        
+        // Hire Me Modal
+        const hireMeBtn = document.getElementById('hireMeBtn');
+        const hireMeModal = document.getElementById('hireMeModal');
+        const closeHireModal = document.getElementById('closeHireModal');
+        
+        if (hireMeBtn && hireMeModal && closeHireModal) {
+            hireMeBtn.addEventListener('click', () => {
+                hireMeModal.style.display = 'flex';
+            });
+            
+            closeHireModal.addEventListener('click', () => {
+                hireMeModal.style.display = 'none';
+            });
+        }
+        
+        // Location Modal
+        const locationItem = document.getElementById('locationItem');
+        const locationModal = document.getElementById('locationModal');
+        const closeLocationModal = document.getElementById('closeLocationModal');
+        
+        if (locationItem && locationModal && closeLocationModal) {
+            locationItem.addEventListener('click', () => {
+                locationModal.style.display = 'flex';
+            });
+            
+            closeLocationModal.addEventListener('click', () => {
+                locationModal.style.display = 'none';
+            });
+        }
+        
+        // Close modals when clicking outside
+        window.addEventListener('click', (e) => {
+            if (hireMeModal && e.target === hireMeModal) {
+                hireMeModal.style.display = 'none';
+            }
+            if (locationModal && e.target === locationModal) {
+                locationModal.style.display = 'none';
+            }
+        });
+        
+        // Animate skill bars when in view
+        const skillBars = document.querySelectorAll('.skill-progress');
+        if (skillBars.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.getAttribute('data-width');
+                        entry.target.style.width = width + '%';
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+        }
+        
+        // Typewriter effect for hero paragraph
+        const typewriterText = document.getElementById('typewriter-text');
+        if (typewriterText) {
+            const text = "Seeking opportunities to apply technical expertise, problem-solving skills, and passion for IT in a dynamic team environment.";
+            let i = 0;
+            
+            function typeWriter() {
+                if (i < text.length) {
+                    typewriterText.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 30);
+                }
+            }
+            
+            // Start typewriter effect after a short delay
+            setTimeout(typeWriter, 1000);
+        }
+        
+        // Handle reference clicks
+        document.querySelectorAll('.reference-img').forEach(img => {
+            img.addEventListener('click', function() {
+                const onclickAttr = this.getAttribute('onclick');
+                if (onclickAttr) {
+                    const refId = onclickAttr.match(/'([^']+)'/)[1];
+                    showReference(refId);
+                }
+            });
+        });
+        
+        // Initialize chat with welcome message
+        setTimeout(() => {
+            if (chatContainer) {
+                chatContainer.classList.add('active');
+            }
+        }, 3000);
+        
+        // Test backend connection on load
+        window.addEventListener('load', () => {
+            fetch('http://localhost:5000/')
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Backend connection successful');
+                    } else {
+                        console.error('Backend responded with status:', response.status);
+                    }
+                })
+                .catch(error => {
+                    console.error('Backend connection test failed:', error);
+                    console.log('Troubleshooting:');
+                    console.log('1. Ensure Flask server is running: python app.py');
+                    console.log('2. Check if port 5000 is available');
+                    console.log('3. Verify no firewall is blocking localhost:5000');
+                });
+        });
+
+
+        // QR Code Generator
+    document.getElementById('generate-qr').addEventListener('click', function() {
+        const url = document.getElementById('qr-url').value;
+        const qrContainer = document.getElementById('qrcode');
+        
+        // Clear previous QR code
+        qrContainer.innerHTML = '';
+        
+        if (url) {
+            // Generate QR code
+            new QRCode(qrContainer, {
+                text: url,
+                width: 200,
+                height: 200,
+                colorDark: "#1e3a8a",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+            
+            // Enable download button
+            setTimeout(() => {
+                const canvas = qrContainer.querySelector('canvas');
+                const downloadLink = document.getElementById('download-qr');
+                downloadLink.href = canvas.toDataURL('image/png');
+                downloadLink.style.display = 'inline-block';
+            }, 300);
+        } else {
+            alert('Please enter a valid URL');
+        }
+    });
+    
+    // Set current URL as default
+    window.addEventListener('load', function() {
+        document.getElementById('qr-url').value = window.location.href;
+    });
+    </script>
+</body>
+</html>
